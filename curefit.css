@@ -1,0 +1,386 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+  color: #fff;
+}
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/* PAGE 1 START HERE */
+
+#nav {
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  padding-left: 40px;
+  padding-right: 30px;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 99;
+  padding-top: 2.5vh;
+}
+
+#pages {
+  display: flex;
+  gap: 160px;
+  align-items: center;
+}
+
+button {
+  background: transparent;
+  position: relative;
+  padding: 15px 45px;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgb(40, 144, 241);
+  border-radius: 250px;
+  outline: none;
+  overflow: hidden;
+  color: rgb(40, 144, 241);
+  transition: color 0.3s 0.1s ease-out;
+  text-align: center;
+  justify-content: center;
+  width: 13em;
+}
+
+
+button::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  content: '';
+  border-radius: 50%;
+  display: block;
+  width: 20em;
+  height: 20em;
+  left: -5em;
+  text-align: center;
+  transition: box-shadow 0.5s ease-out;
+  z-index: -1;
+}
+
+button:hover {
+  color: #fff;
+  border: 1px solid rgb(40, 144, 241);
+}
+
+button:hover::before {
+  box-shadow: inset 0 0 0 10em rgb(40, 144, 241);
+}
+
+#logo{
+  cursor: pointer;
+}
+
+#pages h4{
+  cursor: pointer;
+}
+
+video{
+ height: 100vh;
+ width: 100vw;
+ object-fit: cover;
+ position: fixed;
+ z-index: -1;
+}
+
+#main{
+  position: relative;
+  background-color: rgba(0,0,0,0.65);
+}
+
+#page1{
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#page1 h1{
+  font-size: 120px;
+  font-weight: 900;
+  margin-top: 1.2em;
+  position: relative;
+}
+
+#page1 h1::before{
+  content: "BE.YOUR.BEST";
+  position: absolute;
+  color: #636363;
+  top: -3px;
+  left:-3px;
+  -webkit-text-stroke: 2px rgb(40, 144, 241);
+  z-index: -1;
+}
+
+#page1 h2{
+  font-size: 40px;
+  font-weight: 800;
+}
+
+#highlight{
+  font-size: 50px;
+  color: rgb(40, 144, 241);
+  text-decoration: underline;
+}
+
+#page1 h3{
+  font-size: 15px;
+  font-weight: 400;
+  width: 40%;
+  margin-top: 2em;
+  margin-bottom: 5em;
+}
+
+/* PAGE 2 START HERE */
+
+#page2{
+  background: #000000;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  overflow-x: hidden;
+}
+
+#container{
+  width: 100vw;
+  height: 40em;
+  position: relative;
+}
+
+#img1{
+  max-height: 85vh;
+  max-width: 100vw;
+  display: block;
+  object-fit: cover;
+  position: relative;
+}
+
+#content{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;  
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-top: 7em;
+  width: 35em;
+  margin-left: 5em;
+}
+
+#content h3{
+  width: 100em;
+  font-size: 60px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px #f6f7f8;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+#content p{
+  margin-top: 2em;
+  font-size: 22px;
+  font-style: oblique;
+}
+
+#content button{
+  margin-top: 5em;
+}
+
+#scroller{
+  white-space: nowrap;
+  font-size: 90px;
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  -webkit-text-stroke: 1px #f6f7f8;
+  -webkit-text-fill-color: transparent;
+  margin-left: 40px;
+}
+
+#scroller h4{
+  display: inline-block;
+}
+
+/* PAGE 3 START HERE */
+
+#page3{
+  height: 95vh;
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+#container2 {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+
+#img2{
+  max-width: 100%;
+  height: 95vh;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+}
+
+#content2 {
+  position: absolute;
+  top: 20%;
+  color: white;
+}
+
+#content2 h3{
+  font-size: 60px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  display: inline-block;
+  position: relative;
+  line-height: 1.2;
+  -webkit-text-stroke: 0.5px #f6f7f8;
+  -webkit-text-fill-color: transparent;
+  margin-left: 10%;
+  margin-top: 10%;
+}
+
+#content2 h4{
+  font-size: 60px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  -webkit-text-stroke: 0.5px #f6f7f8;
+  -webkit-text-fill-color: transparent;
+  margin-left: 41%;
+}
+
+#content2 p{
+  margin-top: 2em;
+  font-size: 20px;
+  font-style: oblique;
+  margin: 70px 300px ;
+  font-weight: 200;
+}
+
+
+
+/* PAGE 4 START HERE */
+
+#page4{
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 300px;
+}
+
+#highlight2{
+  font-size: 70px;
+  color: rgb(40, 144, 241);
+  text-decoration: underline;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#trainers{
+  font-size: 50px;
+  font-weight: 300;
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#card-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#card-list{
+  color: #fff;
+  width: 300px;
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  margin: 45px;
+}
+
+#user-img{
+  height: 300px;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+  margin-bottom: 30px;
+}
+
+/* PAGE 5 START HERE */
+
+#page5{
+  height: 50vh;
+  width: 100vw;
+}
+
+#top-empty{
+  height: 80%;
+}
+
+#bottom-content{
+  height: 20%;
+  background: #111;
+}
+
+.footer-links{
+  color: #ccc;
+  text-align: center;
+  justify-content: center;
+  padding: 15px 0;
+  font-size: 16px;
+  border-top: 1px solid #333;
+}
+
+.footer-links p {
+  margin-top: 1%;
+}
