@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot with Floating Button</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      height: 100vh;
+      background: #f4f4f4;
+    }
+
+    /* Floating Button */
+    .chat-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ff3c3c;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0px 6px 12px rgba(0,0,0,0.3);
+    }
+
+    /* Chat Container */
+    .chat-container {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 350px;
+      height: 500px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0px 6px 16px rgba(0,0,0,0.3);
+      display: none; /* Hidden by default */
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .chat-header {
+      background: #ff3c3c;
+      color: white;
+      padding: 12px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .chat-box {
+      flex: 1;
+      padding: 12px;
+      overflow-y: auto;
+      background: #fafafa;
+    }
+
+    .chat-message {
+      margin: 6px 0;
+      line-height: 1.4;
+    }
+
+    .chat-message.user {
+      text-align: right;
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .chat-message.bot {
+      text-align: left;
+      color: #333;
+    }
+
+    .input-box {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+
+    .input-box input {
+      flex: 1;
+      padding: 8px;
+      border: none;
+      outline: none;
+    }
+
+    .input-box button {
+      padding: 8px 15px;
+      border: none;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+
+    .input-box button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Button -->
+  <button class="chat-btn" onclick="toggleChat()">💬</button>
+
+  <!-- Chatbot Box -->
+  <div class="chat-container" id="chat-container">
+    <div class="chat-header">🏋️ CureFit AI Chatbot</div>
+    <div class="chat-box" id="chat-box">
+      <div class="chat-message bot"><b>Bot:</b> Hi! 👋 Ask me about Diet Plan, Membership, Timings, or Trainer Fees.</div>
+    </div>
+    <div class="input-box">
+      <input type="text" id="user-input" placeholder="Type your question...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    function toggleChat() {
+      const chat = document.getElementById("chat-container");
+      chat.style.display = (chat.style.display === "flex") ? "none" : "flex";
+    }
+
+    function sendMessage() {
+      const input = document.getElementById("user-input");
+      const message = input.value.trim();
+      if (!message) return;
+
+      const chatBox = document.getElementById("chat-box");
+      chatBox.innerHTML += `<div class="chat-message user">You: ${message}</div>`;
+      input.value = "";
+
+      let reply = "❌ Sorry, I didn’t understand. Please ask about Diet Plan, Membership Plan, Gym Timings, or Trainer Fees.";
+
+      if (message.toLowerCase().includes("diet")) {
+        reply = "🍎 Diet Plan: High protein meals, weekly guidance, and cheat meals allowed once a week.";
+      } else if (message.toLowerCase().includes("membership")) {
+        reply = "💳 Membership Plans:\nBasic ₹999/mo | Standard ₹1499/mo | Premium ₹2499/mo (includes trainer & diet).";
+      } else if (message.toLowerCase().includes("time")) {
+        reply = "⏰ Timings: Morning 5AM–11AM | Evening 4PM–10PM (All days open).";
+      } else if (message.toLowerCase().includes("trainer")) {
+        reply = "🏋️ Personal Trainer: ₹500/session | ₹3000/month (8 sessions) | ₹8000/month (Unlimited).";
+      }
+
+      chatBox.innerHTML += `<div class="chat-message bot"><b>Bot:</b> ${reply}</div>`;
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  </script>
+
+</body>
+</html>
+
